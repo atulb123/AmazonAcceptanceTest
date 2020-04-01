@@ -23,3 +23,8 @@ HTML report can be found under target report
 
 *******Maven Command to run the test is:******************
 mvn test -Dcucumber.options="--tags @TC001" -DdeviceType="android_device"
+***************************************************************
+
+**********************************
+Please Change DeviceCapabilities.json attributes according to your device requirement before execution
+**********************************
