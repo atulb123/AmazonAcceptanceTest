@@ -1,0 +1,22 @@
+[
+	{
+		"deviceType": "android_device",
+		"deviceName": "OnePlus 7",
+		"platformVersion": "10",
+		"browserName": "Chrome",
+		"appName":"Amazon_shopping.apk",
+		"appiumServerUrl":"http://0.0.0.0:4723/wd/hub",
+		"appPackage":"com.amazon.mShop.android.shopping",
+		"appActivity": "com.amazon.mShop.home.HomeActivity",
+		"noReset": false
+	},
+	{
+		"deviceType": "iphone",
+		"deviceName": "iPhone 8 Simulator",
+		"platformName":"iOS",
+		"platformVersion": "11.3",
+		"browserName": "Safari",
+		"appiumVersion": "1.8.1",
+		"noReset": true
+	}
+]
