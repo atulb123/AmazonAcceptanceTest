@@ -19,28 +19,31 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import com.amazon.baseclass.BaseClass;
 import com.amazon.context.Context;
 
-
 public class ProductCheckoutScreen extends BaseClass {
 
 	@FindBy(xpath = "//*[@content-desc='Search']")
 	public WebElement searchIcon;
-	
+
 	@FindBy(xpath = "//*[contains(@text,'Amazon needs your delivery location')]")
 	public WebElement popUpText;
-	
+
 	@FindBy(xpath = "//*[contains(@text,'close')]")
 	public WebElement closePopup;
-	
 
 	public ProductCheckoutScreen() {
 		PageFactory.initElements(driver, this);
 	}
 
 	public String getCheckoutScreenProductName() {
-		wait.until(ExpectedConditions.visibilityOf(popUpText));
+		try {
+			wait.until(ExpectedConditions.visibilityOf(popUpText));
+		} catch (Exception e) {
+		}
 		((AndroidDriver) driver).pressKeyCode(AndroidKeyCode.BACK);
-		wait.until(ExpectedConditions.visibilityOf(closePopup)).click();
+		try {
+			wait.until(ExpectedConditions.visibilityOf(closePopup)).click();
+		} catch (Exception e) {
+		}
 		return driver.findElement(By.xpath("//*[@text='" + Context.tempValues.get("productName") + "']")).getText();
 	}
-
 }

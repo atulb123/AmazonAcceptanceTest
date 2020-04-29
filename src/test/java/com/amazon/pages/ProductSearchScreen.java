@@ -32,8 +32,12 @@ public class ProductSearchScreen extends BaseClass {
 		PageFactory.initElements(driver, this);
 	}
 
-	public ProductSearchScreen searchProduct(String productName) {
-		wait.until(ExpectedConditions.visibilityOf(closePopup)).click();
+	public boolean searchProduct(String productName) {
+		try {
+			wait.until(ExpectedConditions.visibilityOf(closePopup)).click();
+		} catch (Exception e) {
+
+		}
 		wait.until(ExpectedConditions.visibilityOf(searchBox)).click();
 		driver.hideKeyboard();
 		wait.until(ExpectedConditions.visibilityOf(searchBox)).sendKeys(productName);
@@ -42,13 +46,18 @@ public class ProductSearchScreen extends BaseClass {
 		if (productList.size() > 2) {
 			WebElement tempElement = productList.get(new Random().nextInt(productList.size() - 1) + 1);
 			Context.tempValues.put("productName", tempElement.getText());
+			((AndroidDriver) driver).findElementByAndroidUIAutomator(
+					"new UiScrollable(new UiSelector()).scrollIntoView(text(\"" + tempElement.getText() + "\"));");
 			tempElement.click();
 		} else {
 			WebElement tempElement = productList.get(productList.size() - 1);
 			Context.tempValues.put("productName", tempElement.getText());
+			((AndroidDriver) driver).findElementByAndroidUIAutomator(
+					"new UiScrollable(new UiSelector()).scrollIntoView(text(\"" + tempElement.getText() + "\"));");
 			tempElement.click();
+
 		}
-		return this;
+		return true;
 	}
 
 }

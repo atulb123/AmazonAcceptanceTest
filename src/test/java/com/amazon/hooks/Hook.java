@@ -25,6 +25,8 @@ public class Hook extends BaseClass {
 
 	@After("@Hooks")
 	public void closeBrowser(Scenario scenario) throws Exception {
+		if (scenario.isFailed())
+			scenario.embed(driver.getScreenshotAs(OutputType.BYTES), "image/png");
 		driver.quit();
 	}
 }

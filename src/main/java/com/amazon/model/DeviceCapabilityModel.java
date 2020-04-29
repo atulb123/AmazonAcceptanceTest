@@ -12,7 +12,16 @@ public class DeviceCapabilityModel {
 	private String appiumServerUrl;
 	private String appPackage;
 	private String appActivity;
-	
+	private String orientation;
+
+	public String getOrientation() {
+		return orientation;
+	}
+
+	public void setOrientation(String orientation) {
+		this.orientation = orientation;
+	}
+
 	public String getAppPackage() {
 		return appPackage;
 	}

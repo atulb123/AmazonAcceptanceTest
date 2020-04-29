@@ -25,6 +25,10 @@ public class LoginScreen extends BaseClass {
 	
 	@FindBy(xpath = "//*[@resource-id='signInSubmit']")
 	public WebElement loginButton;
+	
+	@FindBy(xpath = "//*[@content-desc=\"Home\"]")
+	public WebElement amazonLogo;
+	
 
 
 	public LoginScreen() {
