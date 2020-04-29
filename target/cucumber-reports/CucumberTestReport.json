@@ -1,0 +1,111 @@
+[
+  {
+    "line": 2,
+    "elements": [
+      {
+        "start_timestamp": "2020-04-29T17:58:52.484Z",
+        "before": [
+          {
+            "result": {
+              "duration": 14555921900,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Hook.browserInitialization(Scenario)"
+            }
+          }
+        ],
+        "line": 5,
+        "name": "Verify Product details are same across search screen and checkout screen",
+        "description": "",
+        "id": "search-product;verify-product-details-are-same-across-search-screen-and-checkout-screen",
+        "after": [
+          {
+            "result": {
+              "duration": 589718600,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Hook.closeBrowser(Scenario)"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 19685182700,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "I login to amazon Appication as \"User Type 1\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"User Type 1\"",
+                  "offset": 32
+                }
+              ],
+              "location": "SearchProductStepdef.i_login_to_amazon_Appication_as(String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 54938590500,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "I search for \"65-inch tv\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"65-inch tv\"",
+                  "offset": 13
+                }
+              ],
+              "location": "SearchProductStepdef.i_search_for(String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 45728942500,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "I should see same Product details across search screen and checkout screen for specific project",
+            "match": {
+              "location": "SearchProductStepdef.i_should_see_same_Product_details_across_search_screen_and_checkout_screen_for_specific_project()"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@Hooks"
+          },
+          {
+            "name": "@TC001"
+          }
+        ]
+      }
+    ],
+    "name": "Search Product",
+    "description": "",
+    "id": "search-product",
+    "keyword": "Feature",
+    "uri": "file:src/test/resources/features/SearchProduct.feature",
+    "tags": [
+      {
+        "name": "@Hooks",
+        "type": "Tag",
+        "location": {
+          "line": 1,
+          "column": 1
+        }
+      }
+    ]
+  }
+]
